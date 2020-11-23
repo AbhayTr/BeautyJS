@@ -18,7 +18,7 @@ Simply use this code:
   </body>
 </html>
 ```
-Parameters have to passed on as a JSON Object with keys specified below with their respective functions and acceptable values.
+Parameters have to passed on as a JSON Object. Keys for the same have been specified below with their respective functions and acceptable values.
 
 ## Parameters
 - ### mode (Optional)
