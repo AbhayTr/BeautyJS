@@ -18,6 +18,8 @@ Simply use this code:
   </body>
 </html>
 ```
+Parameters have to passed on as a JSON Object with keys specified below with their respective functions and acceptable values.
+
 ## Parameters
 - ### mode (Optional)
   
@@ -32,7 +34,7 @@ Simply use this code:
 
 - ### start (Optional):
   
-  - Specefies background colour in RGB format which has to be first set on page load and start varying from that colour.
+  Specefies background colour in RGB format which has to be first set on page load and start varying from that colour.
   
   - **Input type for start parameter:** [R_Value, G_Value, B_Value] (eg. [0, 0, 0] for black).
   
@@ -40,7 +42,7 @@ Simply use this code:
 
 - ### element_id (Optional):
   
-  - Specifies the id of the element for which you have to set the beautiful background.
+  Specifies the id of the element for which you have to set the beautiful background.
   
   - **Default Value:** "" (i.e. beautiful background is directly set to body of HTML document).
 
