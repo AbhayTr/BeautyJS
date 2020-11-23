@@ -4,7 +4,7 @@ JS Module for beautiful varying colour backgrounds!
 
 ## Usage
 
-To use simply use this code.
+Simply use this code:
 
 ```html
 <html>
