@@ -26,9 +26,9 @@ Parameters have to passed on as a JSON Object with keys specified below with the
   Specifies colour set in which the colours have to vary.
   
   - **Options for mode parameter**
-    - "dark": Varies the colour in dark colours only (useful for dark mode websites).
-    - "light": Varies the colour in light colours only (useful for light mode websites).
-    - [start_rgb, end_rgb]: Varies the colour from start_rgb value (can be from 0 to 255) to end_rgb value (can be from 0 to 255).
+    - **"dark":** Varies the colour in dark colours only (useful for dark mode websites).
+    - **"light":** Varies the colour in light colours only (useful for light mode websites).
+    - **[start_rgb, end_rgb]:** Varies the colour from start_rgb value (can be from 0 to 255) to end_rgb value (can be from 0 to 255).
   
   - **Default Value:** "" (i.e. varies from 0 to 255 RGB Values).
 
