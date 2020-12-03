@@ -2,21 +2,20 @@
 
 /*
 
-Welcome to JSBeauty
+Welcome to BeautyJS
 
-JS Module for beautiful varying colour
-backgrounds!
+JS Module for beautifully varying RGB colour sets
+that can be set as backgrounds anywhere!
 
-To use simply, add this script file
-to your project with the script tag.
+For usgae, kindly read the instructions in README.md
+available at https://github.com/AbhayTr/BeautyJS.
 
-<script src="https://abhaytr.tk/projects/beauty.js">
-
-Then, just call:
-
-Beauty({params});
-
-in your JS file.
+Optional Parameters that are available are listed below
+in @params and have to be passed as a JSON object (keys as name of
+parameters listed in @params and value is your desired choice
+according to the options available for that parameter as
+specified in @params) which will be the
+first parameter for Beauty().
 
 @params
 
@@ -25,40 +24,39 @@ mode (Optional):
   Specifies colour set in which the colours have to vary.
 
   Options for mode parameter:
-    "dark": Varies the colour in dark colours only (useful for dark mode websites).
-    "light": Varies the colour in light colours only (useful for light mode websites).
+    "dark": Varies the colour in dark colours only (useful for dark mode projects).
+    "light": Varies the colour in light colours only (useful for light mode projects).
     [start_rgb, end_rgb]: Varies the colour from start_rgb value (can be from 0 to 255) to end_rgb value (can be from 0 to 255).
 
   Default Value: "" (i.e. varies from 0 to 255 RGB Values).
 
 start (Optional):
 
-  Specefies background colour in RGB format which has to be first set on page load and start varying from that colour.
-
-  Input type for start parameter: [R_Value, G_Value, B_Value] (eg. [0, 0, 0] for black).
+  Specefies colour in RGB format from which colours have to start varying.
 
   Default Value: [0, 0, 0] (for "dark", none or other mode parameter specified) and [255, 255, 255] (for "light" mode parameter specified).
 
-element_id (Optional):
+time (Optional):
 
-  Specifies the id of the element for which you have to set the beautiful background.
+  Specifies the time in milliseconds after which the colour is changed according to its range.
+  Useful for decreasing the time when using on slow hardware for maintaining the smoothness.
 
-  Default Value: "" (i.e. beautiful background is directly set to body of HTML document).
+  Default Value: 40 ms (Just perfect for majority hardware types).
 
-So go ahead and enjoy the beauty of time varying beautiful background!
+So go ahead and enjoy the beauty of time varying RGB colour sets!
 
 © Abhay Tripathi
 
 */
 
-function Beauty(options = {})
+function Beauty(options = {}, on_new_color)
 {
-  var element_id = "";
   var mode = "";
+  var speed = 40;
   var start_bg_color = [0, 0, 0];
-  if (options.element_id)
+  if (options.speed)
   {
-    element_id = options.element_id;
+    speed = options.speed;
   }
   if (options.mode)
   {
@@ -106,14 +104,7 @@ function Beauty(options = {})
     green = start_bg_color[1];
     blue = start_bg_color[2];
   }
-  if (element_id == "")
-  {
-    document.body.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
-  }
-  else
-  {
-    document.getElementById(element_id).style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
-  }
+  on_new_color([red, green, blue])
   var red_range = 0;
   var green_range = 0;
   var blue_range = 0;
@@ -193,14 +184,7 @@ function Beauty(options = {})
           }
         }
       }
-      if (element_id == "")
-      {
-        document.body.style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
-      }
-      else
-      {
-        document.getElementById(element_id).style.backgroundColor = "rgb(" + red + "," + green + "," + blue + ")";
-      }
+      on_new_color([red, green, blue])
     },
-  40);
+  speed);
 }
