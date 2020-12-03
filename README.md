@@ -1,59 +1,30 @@
-# JBeauty
+# BeautyJS
 
-Java module for beautifully varying RGB colour sets which can be used for setting colours anywhere!
+JS module for beautifully varying RGB colour sets which can be used for setting colours anywhere!
 This module basically varies RGB values in various random ranges via a thread executing continously after very
 small interval of time i.e. in milliseconds hence resulting in beautiful transition of colours.
 
-## Installation
-
-Simply using Gradle or Maven:
-
-### Gradle:
-
-```gradle
-implementation 'com.abhaytr.jbeauty:JBeauty:1.0'
-```
-
-### Maven:
-```maven
-<dependency>
-  <groupId>com.abhaytr.jbeauty</groupId>
-  <artifactId>JBeauty</artifactId>
-  <version>1.0</version>
-  <type>pom</type>
-</dependency>
-```
-
 ## Usage
 
-Simply use this code (Modify according to your needs):
+Simply use this code:
 
-```java
-import com.abhaytr.jbeauty.Beauty;
-import com.abhaytr.jbeauty.ColorListener;
-import java.util.Map;
-import java.util.HashMap;
-
-class YourClass
-{
-  
-  public static void main(String args[])
-  {
-    Map parameters = new HashMap(); //For optional parameters (More about them below).
-    Beauty.start(parameters, new ColorListener()
-    {
-      @Override
-      public void on_new_color(int[] rgb_color)
+```html
+<html>
+  <head>
+    <script src="https://abhaytr.tk/projects/beauty.js"></script>
+  </head>
+  <body>
+    <script>
+      Beauty(Parameters, function(rgb_color)   //Parameters is a JSON Object (Available Parameters Specified Below)
       {
-        int red_value = rgb_color[0];
-        int green_value = rgb_color[1];
-        int blue_value = rgb_color[2];
-        //Now you can do anything with the RGB values (set as background, font color, etc..).
-      }
-    });
-  }
-
-}
+        var r_value = rgb_color[0];
+        var g_value = rgb_color[1];
+        var b_value = rgb_color[2];
+        //Now you can do anything with the rgb values (set background, set text colour, etc..).
+      });
+    </script>
+  </body>
+</html>
 ```
 Optional Parameters that are available are listed below in Parameters section and have to be passed as a Map (keys as name of parameters listed in Parameters section and value is your desired choice according to the options available for that parameter as specified in the Parameters section) which will be the first parameter for start() method of Beauty class.
 
