@@ -87,6 +87,14 @@ function Beauty(options = {}, on_new_color)
     {
       min = mode[0];
       max = mode[1];
+      if (min < 0)
+      {
+        min = 0;
+      }
+      if (max > 255)
+      {
+        max = 255;
+      }
     }
   }
   var red = 0;
@@ -100,6 +108,18 @@ function Beauty(options = {}, on_new_color)
   }
   if (start_bg_color[0] != 0 || start_bg_color[1] != 0 || start_bg_color[2] != 0)
   {
+    if (start_bg_color[0] < min || start_bg_color[1] < min || start_bg_color[2] < min)
+    {
+      start_bg_color[0] = min;
+      start_bg_color[1] = min;
+      start_bg_color[2] = min;
+    }
+    if (start_bg_color[0] > max || start_bg_color[1] > max || start_bg_color[2] > max)
+    {
+      start_bg_color[0] = max;
+      start_bg_color[1] = max;
+      start_bg_color[2] = max;
+    }
     red = start_bg_color[0];
     green = start_bg_color[1];
     blue = start_bg_color[2];
