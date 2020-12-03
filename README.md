@@ -1,7 +1,7 @@
 # BeautyJS
 
 JS module for beautifully varying RGB colour sets which can be used for setting colours anywhere!
-This module basically varies RGB values in various random ranges via a thread executing continously after very
+This module basically varies RGB values in various random ranges via setInterval() executing continously after very
 small interval of time i.e. in milliseconds hence resulting in beautiful transition of colours.
 
 ## Usage
