@@ -26,14 +26,12 @@ Simply use this code:
   </body>
 </html>
 ```
-Optional Parameters that are available are listed below in Parameters section and have to be passed as a Map (keys as name of parameters listed in Parameters section and value is your desired choice according to the options available for that parameter as specified in the Parameters section) which will be the first parameter for start() method of Beauty class.
+Optional Parameters that are available are listed below in Parameters section and have to be passed as a JSON Object (keys as name of parameters listed in Parameters section and value is your desired choice according to the options available for that parameter as specified in the Parameters section) which will be the first parameter for Beauty().
 
 ## Parameters
 - ### mode (Optional)
   
   Specifies colour set in which the colours have to vary.
-  
-  - **Parameter Value Type:** String or int[].
   
   - **Options for mode parameter**
     - **"dark":** Varies the colour in dark colours only (useful for dark mode projects).
@@ -46,16 +44,12 @@ Optional Parameters that are available are listed below in Parameters section an
   
   Specefies colour in RGB format from which colours have to start varying.
   
-  - **Input type for start parameter:** int[]{R_Value, G_Value, B_Value} (eg. int[]{0, 0, 0} for black).
-  
-  - **Default Value:** int[]{0, 0, 0} (for "dark", none or other mode parameter specified) and int[]{255, 255, 255} (for "light" mode parameter specified).
+  - **Default Value:** [0, 0, 0] (for "dark", none or other mode parameter specified) and [255, 255, 255] (for "light" mode parameter specified).
 
 - ### time (Optional):
   
   Specifies the time in milliseconds after which the colour is changed according to its range.
   Useful for decreasing the time when using on slow hardware for maintaining the smoothness.
-  
-  - **Parameter Value Type:** int.
   
   - **Default Value:** 40 ms (Just perfect for majority hardware types).
   
